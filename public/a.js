@@ -2,7 +2,7 @@ import EnemyController from "./EnemyController.js";
 import Player from "./Player.js";
 import BulletController from "./BulletController.js";
  
- window.onload=function(){
+ 
   console.log("s")
   const canvas = document.getElementById("game");
   const ctx = canvas.getContext("2d");
@@ -77,4 +77,4 @@ import BulletController from "./BulletController.js";
   
   setInterval(game, 1000 / 60);
  
- }
+ 
