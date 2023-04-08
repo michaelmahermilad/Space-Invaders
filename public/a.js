@@ -74,9 +74,9 @@ import BulletController from "./BulletController.js";
       isGameOver = true;
     }
   }
-  window.onload=()=>{
+setTimeout(() => {
     setInterval(game, 1000 / 60);
+}, 7000);
 
-  }
-  
+ 
  
