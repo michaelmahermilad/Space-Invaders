@@ -15,7 +15,7 @@ export default class Player {
     this.image = new Image();
     this.image.style.borderRadius="10px"
  
-    this.image.src = "images/player.avif";
+    this.image.src = "images/enemy1.png";
     
     document.addEventListener("keydown", this.keydown);
     document.addEventListener("keyup", this.keyup);
@@ -28,13 +28,9 @@ export default class Player {
     }
     this.move();
     this.collideWithWalls();
-    ctx.save();
-    roundedImage(ctx, this.x , this.y -10, this.width, this.height, 20);
-    ctx.strokeStyle = '#2465D3'
-    ctx.stroke()
-    ctx.clip();
+ 
     ctx.drawImage(this.image, this.x  , this.y , this.width , this.height);
-    ctx.restore();
+  
   
   }
   

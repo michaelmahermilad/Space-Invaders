@@ -74,9 +74,11 @@ import BulletController from "./BulletController.js";
       isGameOver = true;
     }
   }
-setTimeout(() => {
-    setInterval(game, 1000 / 60);
-}, 7000);
+window.onload=()=>{
+   setInterval(game, 1000 / 60);
+}
+   
+
 
  
  
