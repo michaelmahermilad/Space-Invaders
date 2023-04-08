@@ -33,7 +33,7 @@ export default class Player {
     ctx.strokeStyle = '#2465D3'
     ctx.stroke()
     ctx.clip();
-    ctx.drawImage(this.image, this.x -50 , this.y -20, this.width +100, this.height+20);
+    ctx.drawImage(this.image, this.x  , this.y , this.width , this.height);
     ctx.restore();
   
   }
