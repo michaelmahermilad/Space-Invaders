@@ -9,9 +9,9 @@ function App() {
     script.src = "./a.js";
     script.type="module"
      console.log(script)
-     window.onload=()=>{
+    
       document.body.appendChild(script);
-     }
+ 
   
   }, [])
   return (
