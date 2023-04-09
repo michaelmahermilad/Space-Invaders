@@ -7,20 +7,8 @@ import './App.css';
 function App() {   
    
  let [sA,setSA]=useState("stoped")
-  useEffect(() => {
-    if(sA=="stoped"){
-        s.currentTime = 0;
-        setSA("play")
-    s.play()
-    s.volume=1
-    s.addEventListener('ended', function() {
-     
-      s.currentTime = 0;
-      s.play();
-      s.volume=1
-    }, false); 
-    }
- 
+  useEffect((e) => {
+   togle(e)
  
  
 
@@ -39,7 +27,7 @@ function App() {
   
   }, [])
    function togle(e){
-
+if(e)
     e.preventDefault()
     if(sA!=="stoped"){
        s.pause()
