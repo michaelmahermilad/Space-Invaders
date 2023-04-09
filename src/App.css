@@ -14,10 +14,10 @@ canvas {
   flex-direction: column;
   padding: 0px;
   margin: 0px;
-  height: 100vh;
+  height: 99vh;
   background: linear-gradient(
     0deg,
-    rgb(86, 115, 145) 0%,
+    white,
     rgba(0, 0, 0, 0) 100%
   );
 }

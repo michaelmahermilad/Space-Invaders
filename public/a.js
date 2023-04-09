@@ -20,7 +20,7 @@ import BulletController from "./BulletController.js";
    const background0 = new Image();
   
    background0.src = "images/background.png";
- 
+
   const background = new Image();
   
   background.src = "images/space.jpg";
@@ -82,25 +82,19 @@ import BulletController from "./BulletController.js";
     }
   } 
 
- 
-  setTimeout(() => {
-    
+background0.onload=()=>{
+  ctx.drawImage(background0, 0, 0, canvas.width, canvas.height);
+
+}
  
 
-  },300);
-  setTimeout(() => {
- 
- 
-  },50000);
-  
  window.onload=()=>{
-  ctx.drawImage(background0, 0, 0, canvas.width, canvas.height);
 
   setTimeout(() => {
 
       setInterval(game, 1000 / 60);
 
-  },1900);
+  },5000);
 
  }
   
