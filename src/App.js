@@ -2,14 +2,45 @@
 import { useEffect, useState } from 'react';
 import './App.css';
  import child from "./child.mp3"
- let s=new Audio(child)
+     
+
 
 function App() {   
-   
- let [sA,setSA]=useState("stoped")
-  useEffect((e) => {
-   togle(e)
+let [s,setS]=useState(new Audio(child))
+ let [sA,setSA]=useState("ONGOING")
+useEffect(()=>{ 
  
+document.onkeydown=()=>{
+  if(sA!=="NOVOICE"){
+
+
+  s.play();
+  setSA("ONGOING")
+  
+  s.addEventListener('ended', function() {
+ 
+    
+    s.play();
+    s.volume=1
+  }, false); 
+ 
+
+ }else{
+  s.pause()
+  setSA("NOVOICE")
+ }
+}
+
+
+},[s,togle])
+ 
+  useEffect(() => {
+ 
+     
+    
+   
+    
+  
  
 
     
@@ -27,23 +58,17 @@ function App() {
   
   }, [])
    function togle(e){
-if(e)
+
     e.preventDefault()
-    if(sA!=="stoped"){
-       s.pause()
- setSA("stoped")
+    if(sA=="ONGOING"){
+ s.pause()
+ setSA("NOVOICE")
     }
     else{
-      setSA("play")
+      s.play()
+      setSA("ONGOING")
        
-      s.play();
-      s.volume=1
-      s.addEventListener('ended', function() {
      
-        s.currentTime = 0;
-        s.play();
-        s.volume=1
-      }, false); 
     
    
     }
@@ -55,7 +80,7 @@ if(e)
   return (
     <div className="App" >
     <canvas id="game"></canvas> 
-    <button style={{position:'absolute',top:'1rem',right:'1rem',opacity:".9",backgroundColor:'transparent',border:'none' ,borderRadius:'8px',fontFamily:"cursive", color:'white',fontWeight:"bolder",fontSize:"1rem"}} onClick={(e)=>togle(e)}>mute</button>
+    <button style={{position:'absolute',top:'1rem',right:'1rem',opacity:".9",width:"5rem",height:'2rem',backgroundColor:'transparent',border:'none' ,borderRadius:'8px',fontFamily:"cursive", color:'white',fontWeight:"bolder",fontSize:"1.7rem"}} onClick={(e)=>togle(e)}>🔇</button>
     </div>
   );
 }
