@@ -8,6 +8,7 @@ import BulletController from "./BulletController.js";
   const ctx = canvas.getContext("2d");
   let var1=window.innerHeight
   let var2=window.innerWidth
+
    window.onresize=()=>{ 
   
  
@@ -33,11 +34,12 @@ import BulletController from "./BulletController.js";
   let isGameOver = false;
   let didWin = false;
   console.log(canvas)
-  function game() {
+  function game() {  
     checkGameOver();
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
     displayGameOver();
     if (!isGameOver) {
+    
       enemyController.draw(ctx);
       player.draw(ctx);
       playerBulletController.draw(ctx);
@@ -73,10 +75,20 @@ import BulletController from "./BulletController.js";
       didWin = true;
       isGameOver = true;
     }
-  }
+  } 
+  
+ window.onload=()=>{
  
-   setInterval(game, 1000 / 60);
+  setTimeout(() => {
+    document.getElementById("startimage").style.display="none"
 
+      setInterval(game, 1000 / 60);
+
+  },1900);
+
+ }
+  
+ 
    
 
 

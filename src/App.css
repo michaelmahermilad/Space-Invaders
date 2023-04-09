@@ -6,7 +6,8 @@ canvas {
   border:10px solid red;
   border-radius:10px;
 }
-body {
+
+.App {
   overflow: hidden;
   display: flex;
   align-items: center;

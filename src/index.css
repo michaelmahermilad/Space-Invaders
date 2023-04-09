@@ -15,3 +15,8 @@ code {
   border:10px solid red;
   border-radius:10px;
 }
+.myimage{
+  width: 90%;
+  display: block;
+  margin: auto;
+  }
