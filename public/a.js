@@ -17,7 +17,10 @@ import BulletController from "./BulletController.js";
    }
    canvas.width =  window.innerWidth;
    canvas.height = window.innerHeight;
-   
+   const background0 = new Image();
+  
+   background0.src = "images/background.png";
+ 
   const background = new Image();
   
   background.src = "images/space.jpg";
@@ -35,8 +38,10 @@ import BulletController from "./BulletController.js";
   let didWin = false;
   console.log(canvas)
   function game() {  
-    checkGameOver();
+
     ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+
+    checkGameOver();
     displayGameOver();
     if (!isGameOver) {
     
@@ -76,11 +81,22 @@ import BulletController from "./BulletController.js";
       isGameOver = true;
     }
   } 
-  
- window.onload=()=>{
+
  
   setTimeout(() => {
-    document.getElementById("startimage").style.display="none"
+    
+ 
+
+  },300);
+  setTimeout(() => {
+ 
+ 
+  },50000);
+  
+ window.onload=()=>{
+  ctx.drawImage(background0, 0, 0, canvas.width, canvas.height);
+
+  setTimeout(() => {
 
       setInterval(game, 1000 / 60);
 
