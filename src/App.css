@@ -1,6 +1,6 @@
 canvas {
 
-  box-shadow: black 20px 10px 50px;
+  
 }
 .img-rounded-border {
   border:10px solid red;
@@ -14,10 +14,10 @@ canvas {
   flex-direction: column;
   padding: 0px;
   margin: 0px;
-  height: 99vh;
+  height: 100vh;
   background: linear-gradient(
     0deg,
     white,
-    rgba(0, 0, 0, 0) 100%
+    white
   );
 }

@@ -84,14 +84,14 @@ import BulletController from "./BulletController.js";
 
 background0.onload=()=>{
   ctx.drawImage(background0, 0, 0, canvas.width, canvas.height);
-
 }
+
  
 
  background.onload=function(){
 
   setTimeout(() => {
-
+   
       setInterval(game, 1000 / 60);
 
   },5000);

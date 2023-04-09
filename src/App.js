@@ -1,11 +1,34 @@
  
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
- 
-function App() {
-  useEffect(() => {
+ import child from "./child.mp3"
+ let s=new Audio(child)
+
+function App() {   
    
+ let [sA,setSA]=useState("stoped")
+  useEffect(() => {
+    if(sA=="stoped"){
+        s.currentTime = 0;
+        setSA("play")
+    s.play()
+    s.volume=1
+    s.addEventListener('ended', function() {
+     
+      s.currentTime = 0;
+      s.play();
+      s.volume=1
+    }, false); 
+    }
  
+ 
+ 
+
+    
+ 
+      
+    
+  
     const script = document.createElement("script");
     script.src = "./a.js";
     script.type="module"
@@ -15,10 +38,36 @@ function App() {
 
   
   }, [])
+   function togle(e){
+
+    e.preventDefault()
+    if(sA!=="stoped"){
+       s.pause()
+ setSA("stoped")
+    }
+    else{
+      setSA("play")
+       
+      s.play();
+      s.volume=1
+      s.addEventListener('ended', function() {
+     
+        s.currentTime = 0;
+        s.play();
+        s.volume=1
+      }, false); 
+    
+   
+    }
+
+
+ 
+   
+  }
   return (
     <div className="App" >
     <canvas id="game"></canvas> 
-    
+    <button style={{position:'absolute',top:'1rem',right:'1rem',opacity:".9",backgroundColor:'transparent',border:'none' ,borderRadius:'8px',fontFamily:"cursive", color:'white',fontWeight:"bolder",fontSize:"1rem"}} onClick={(e)=>togle(e)}>mute</button>
     </div>
   );
 }
