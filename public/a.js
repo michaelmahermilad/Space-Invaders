@@ -88,7 +88,7 @@ background0.onload=()=>{
 }
  
 
- window.onload=function(){
+ background.onload=function(){
 
   setTimeout(() => {
 
